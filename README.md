@@ -17,6 +17,7 @@ I started PCA to gain intuition into how the words are most correlated to each o
 ![](images/pca_.png)
 
 In my PCA analysis, words relating to which AI algorithm was being used where prevalent, the following are the top 10 word outliers on the tips of the PCA 'triangle.'
+
 TOP LEFT(yellow):image, images, cnn, segmentation, object, network, detection, layer, convolutional, and layers           
 BOTTOM LEFT (blue): algorithm, xi, variables, theorem, let, function, graph, problem, probability, and proof         
 BOTTOM RIGHT (red): image, images, cnn, segmentation, object, network, detection, layer, convolutional, and layers         
