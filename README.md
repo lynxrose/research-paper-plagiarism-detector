@@ -49,7 +49,11 @@ layer            0.106028
 convolutional    0.106013
 layers           0.101130
 
+![](images/k_means_clustering.png)
 
+![](images/pca_.png)
+
+![](images/roc_curve.png)
 
 The next steps are determining the cluster 
 
