@@ -16,7 +16,7 @@ Through naive bayes with 2000 max_features and oversampling was I able to create
 
 I started PCA to gain intuition into how the words are most correlated to each other. This graph shows that the most information gain was when k-means created 3 clusters. 
 
-![](images/pca_.png)
+![](images/pca_single_authors.png)
 
 In my PCA analysis, words relating to specific academia was being in more prevalence, the following are the top 10 word outliers on the tips of the PCA 'triangle.'
 
