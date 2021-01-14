@@ -9,7 +9,6 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.metrics import roc_curve
 from sklearn.metrics import auc
-import matplotlib.pyplot as plt
 from seaborn import set_style
 from imblearn.over_sampling import RandomOverSampler
 
@@ -23,7 +22,7 @@ data = pd.read_csv('data/research_data.csv')
 X_train, X_test, y_train, y_test = train_test_split(list(data.body_text), list(data.one_author),test_size=0.2)
 
 #vectorize body text with 2000 features
-vectorizor = TfidfVectorizer(stop_words = 'english', max_features=2000)
+vectorizor = TfidfVectorizer(max_features=2500)
 X_train_matrix = vectorizor.fit_transform(X_train)
 X_test_matrix = vectorizor.fit_transform(X_test)
 X_train_matrix = X_train_matrix.todense()
@@ -81,3 +80,14 @@ highest_pred = nb.predict_proba(X_test_matrix)
 data.iloc[pd.Series(highest_pred[:,0]).idxmin()]['title']
 #over 1
 data.iloc[pd.Series(highest_pred[:,0]).idxmax()]['title']
+
+#show_most_informative_words
+def show_most_informative_features(vectorizer, clf, n=20):
+    feature_names = vectorizer.get_feature_names()
+    coefs_with_fns = sorted(zip(clf.coef_[0], feature_names))
+    top = zip(coefs_with_fns[:n], coefs_with_fns[:-(n + 1):-1])
+    print('Top more or\tTop one researcher words')
+    for (coef_1, fn_1), (coef_2, fn_2) in top:
+        print ("%-15s\t%-15s" % (fn_1, fn_2))
+
+show_most_informative_features(vectorizor, nb, 200)
