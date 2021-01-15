@@ -4,7 +4,7 @@
 [Project One Pager](https://docs.google.com/document/d/1-u0Y-XK09nYjwefSBvc1PbITTa2FsOCkA7o2DyjHZjA/edit?usp=sharing)
 
 Does the writing quality, length, or style in groups of researchers differ from how individual researchers write?
-I hope to assist researchers gain more insight into there paper prior to clicking the submit button. Assuming that if more authors write a paper the better written it is, this algorithm will highlight if a paper reads not as polished or as researched as it COULD read. 
+I hope to assist researchers gain more insight into there paper prior to clicking the submit button. 
 That was the question I asked myself moving into scraping pdf files from [arxiv.org](arxiv.org). Armed with 41 thousand links and a VPN, my computer made calls to arxiv.org in increments of 2 hours (in which I switched IPs) for three days. I proceeded to turn the PDF files into text with ~50% success rate leaving me with 14,066 after cleaning which consisted of cutting off bottom acknowledgements, removing escape words, and utilizing TFIDFVectorizer. 
 My models attempted to determine if one person wrote the paper or more.
 
